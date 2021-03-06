@@ -1,0 +1,33 @@
+.img-w-100 {
+  width: 100%;
+}
+
+.center-content {
+  display: flex;
+  justify-content: center;
+}
+
+.layout {
+  padding: 2rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.content-margin {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.button {
+    background-color: pink;
+}

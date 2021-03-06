@@ -5,6 +5,7 @@ require("dotenv").config({
 module.exports = {
   /* Your site config here */
   plugins: [
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-source-contentful`,
       options: {
@@ -17,7 +18,7 @@ module.exports = {
       options: {
         plugins: [
           {
-            resolve: `gatsby-remark-highlight-code`
+            resolve: `gatsby-remark-highlight-code`,
           },
         ],
       },
