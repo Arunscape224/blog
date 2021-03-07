@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import JumbotronCard from "../components/jumbotron-card.component"
 import About from "../components/about.component"
+import Skills from "../components/skills.component"
 import { useColorModeValue } from "@chakra-ui/color-mode"
 import theme from "../theme"
 
@@ -21,6 +22,7 @@ function Home({ data: { allImageSharp } }) {
         <JumbotronCard bg={bg} color={color} />
       </div>
       <About bg={bg} color={color} />
+      <Skills bg={bg} color={color} />
     </div>
   )
 }
