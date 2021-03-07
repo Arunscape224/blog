@@ -1,8 +1,16 @@
 import React from "react"
+import Header from "./header.component"
 import "../../global.css"
 
+
+
 const Layout = ({ children }) => {
-  return <main className="layout">{children}</main>
+  return (
+    <>
+      <Header />
+      <main>{children}</main>
+    </>
+  )
 }
 
 export default Layout

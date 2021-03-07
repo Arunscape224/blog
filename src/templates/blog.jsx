@@ -1,11 +1,12 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
-import Layout from "../components/Layout.component"
+import '../../global.css'
 
 const PageTemplate = ({ data: { contentfulPost } }) => {
   const { title, hero } = contentfulPost
   React.useEffect(() => {
+    
     try {
       const deckdeckgoLoader = require("@deckdeckgo/highlight-code/dist/loader")
 
@@ -16,7 +17,7 @@ const PageTemplate = ({ data: { contentfulPost } }) => {
   }, [])
 
   return (
-    <Layout>
+    <div className="layout">
       <Img fluid={hero.fluid} />
       <h1 className="text-center">{title}</h1>
       {contentfulPost.childContentfulPostBodyTextNode.childMarkdownRemark
@@ -29,7 +30,7 @@ const PageTemplate = ({ data: { contentfulPost } }) => {
           }}
         />
       )}
-    </Layout>
+    </div>
   )
 }
 
@@ -52,14 +53,7 @@ export const query = graphql`
       }
       hero {
         fluid(maxWidth: 1800) {
-          aspectRatio
-          base64
-          src
-          sizes
-          srcSetWebp
-          srcSet
-          srcWebp
-          tracedSVG
+          ...GatsbyContentfulFluid
         }
       }
     }

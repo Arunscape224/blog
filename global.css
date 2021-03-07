@@ -1,33 +1,26 @@
-.img-w-100 {
-  width: 100%;
-}
-
-.center-content {
-  display: flex;
-  justify-content: center;
-}
-
 .layout {
+  padding: 4rem;
+}
+.jumbotron-card-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 4rem;
+}
+
+.jumbotron-card {
   padding: 2rem;
+  border: 2px solid white;
 }
 
-.text-center {
-  text-align: center;
-}
-
-.italic {
-  font-style: italic;
-}
-
-.bold {
-  font-weight: bold;
-}
-
-.content-margin {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-
-.button {
-    background-color: pink;
+@media only screen and (max-width: 600px) {
+  .jumbotron-card-overlay {
+    justify-content: center;
+    padding: 0;
+  }
 }
