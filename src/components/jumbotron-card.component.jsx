@@ -1,8 +1,7 @@
 import React from "react"
-import { Box, Heading, Text } from "@chakra-ui/react"
 import "../../global.css"
-import { useColorModeValue } from "@chakra-ui/color-mode"
-import theme from "../theme"
+import { Link } from "gatsby"
+import { Box, Heading, Text } from "@chakra-ui/react"
 import {
   faGithubAlt,
   faLinkedin,
@@ -10,15 +9,8 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { Link } from "gatsby"
 
-const JumbotronCard = () => {
-  // Using theme bg with alpha
-  const bg = useColorModeValue(
-    "rgba(255, 255, 255, 0.7)",
-    "rgba(104, 106, 106, 0.7)"
-  )
-  const color = useColorModeValue(theme.lightMode.color, theme.darkMode.color)
+const JumbotronCard = ({ bg, color }) => {
   return (
     <Box className="jumbotron-card-overlay" shadow="lg" pos="absolute">
       <Box
