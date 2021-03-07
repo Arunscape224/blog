@@ -4,17 +4,23 @@ import Img from "gatsby-image"
 import JumbotronCard from "../components/jumbotron-card.component"
 import About from "../components/about.component"
 import Skills from "../components/skills.component"
+import Projects from "../components/projects.component"
 import { useColorModeValue } from "@chakra-ui/color-mode"
 import theme from "../theme"
 
-function Home({ data: { allImageSharp } }) {
+function Home({
+  data: {
+    file: {
+      childImageSharp: { fluid },
+    },
+  },
+}) {
   // Using theme bg with alpha
   const bg = useColorModeValue(
     "rgba(255, 255, 255, 0.7)",
     "rgba(104, 106, 106, 0.7)"
   )
   const color = useColorModeValue(theme.lightMode.color, theme.darkMode.color)
-  const fluid = allImageSharp.edges[0].node.fluid
   return (
     <div>
       <div style={{ position: "relative" }}>
@@ -23,6 +29,7 @@ function Home({ data: { allImageSharp } }) {
       </div>
       <About bg={bg} color={color} />
       <Skills bg={bg} color={color} />
+      <Projects bg={bg} color={color} />
     </div>
   )
 }
@@ -31,12 +38,10 @@ export default Home
 
 export const HomeQuery = graphql`
   {
-    allImageSharp {
-      edges {
-        node {
-          fluid(maxWidth: 1800) {
-            ...GatsbyImageSharpFluid
-          }
+    file(extension: { eq: "jpg" }, name: { eq: "star-banner" }) {
+      childImageSharp {
+        fluid(maxWidth: 1800) {
+          ...GatsbyImageSharpFluid
         }
       }
     }

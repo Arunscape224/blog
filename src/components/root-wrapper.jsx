@@ -3,7 +3,7 @@ import React from "react"
 import Layout from "./layout.component"
 import { mode } from "@chakra-ui/theme-tools"
 import { extendTheme } from "@chakra-ui/react"
-import theme from '../theme'
+import theme from "../theme"
 
 let customTheme = {
   styles: {

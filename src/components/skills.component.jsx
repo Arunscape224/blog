@@ -7,13 +7,14 @@ const proficient = [
   "React + Hooks",
   "Gatsby",
   "Next.js",
+  "SCSS",
   "Redux",
   "Context API",
   "GraphQL",
   "Apollo",
   "REST API",
-  "PostgreSQL",
-  "SQL Queries",
+  "Postgres",
+  "SQL",
   "Node.js",
   "Contentful",
   "Netlify + Netlify CLI",
@@ -22,29 +23,34 @@ const proficient = [
   "Shopify Store Front API",
   "UI/UX Design (Sketch)",
 ]
-const learning = ["PHP + Laravel", "Ruby + Rails", "Supercollider", "Testing / TDD"]
+const learning = [
+  "Testing / TDD",
+  "PHP + Laravel",
+  "Ruby + Rails",
+  "Supercollider",
+]
 const Skills = ({ bg, color }) => (
-  <Box className="layout" bg={bg} color={color}>
+  <Box my={4} className="layout" bg={bg} color={color}>
     <Text py={4} fontSize="3xl">
       Proficient In:
     </Text>
-    <div>
+    <>
       {proficient.map((skill, i) => (
         <Badge mr={4} colorScheme="green" key={i}>
           {skill}
         </Badge>
       ))}
-    </div>
+    </>
     <Text py={4} fontSize="3xl">
-      Learning / Playing With:
+      Actively Learning:
     </Text>
-    <div>
+    <>
       {learning.map((skill, i) => (
         <Badge mr={4} colorScheme="purple" key={i}>
           {skill}
         </Badge>
       ))}
-    </div>
+    </>
   </Box>
 )
 export default Skills
