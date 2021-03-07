@@ -66,7 +66,7 @@ export const HomeQuery = graphql`
           childContentfulPostBodyTextNode {
             childMarkdownRemark {
               html
-              excerpt
+              excerpt(format: HTML, pruneLength: 0)
             }
           }
           id

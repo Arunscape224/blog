@@ -160,6 +160,10 @@ interface NavItem {
 
 const NAV_ITEMS: Array<NavItem> = [
   {
+    label: "Home",
+    href: "http://localhost:8000/",
+  },
+  {
     label: "About",
     href: "http://localhost:8000/#about",
   },

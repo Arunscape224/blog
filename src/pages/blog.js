@@ -3,6 +3,8 @@ import { graphql, useStaticQuery } from "gatsby"
 import "../../global.css"
 import BlogCard from "../components/blog-card.component"
 import { Link } from "gatsby"
+import { Box } from "@chakra-ui/react"
+
 function Blog() {
   const data = useStaticQuery(graphql`
     query {
@@ -13,6 +15,7 @@ function Blog() {
             childContentfulPostBodyTextNode {
               childMarkdownRemark {
                 html
+                excerpt(format: HTML, pruneLength: 0)
               }
             }
             id
@@ -33,13 +36,13 @@ function Blog() {
   let posts = data.allContentfulPost.edges
 
   return (
-    <div className="layout">
+    <Box className="layout grid-container">
       {posts.map(({ node }, i) => (
         <Link to={node.slug}>
           <BlogCard post={node} key={i} />
         </Link>
       ))}
-    </div>
+    </Box>
   )
 }
 

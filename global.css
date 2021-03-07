@@ -16,11 +16,23 @@
 }
 /* ----- */
 
-
 .layout {
   padding-left: 4rem;
   padding-right: 4rem;
 }
+
+.grid-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 2rem;
+}
+
+.grid-item {
+  margin: 20px;
+  padding: 5px;
+}
+
 .p-relative {
   position: relative;
 }
