@@ -1,7 +1,43 @@
+/* Contentful content classes. */
+.header {
+  font-size: 3rem;
+}
+.header-2 {
+  font-size: 2rem;
+}
+
+.p-block {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.img-100 {
+  width: 100%;
+}
+/* ----- */
+
+
 .layout {
   padding-left: 4rem;
   padding-right: 4rem;
 }
+.p-relative {
+  position: relative;
+}
+
+.home-content {
+  display: flex;
+}
+
+.home-content-left {
+  width: 70%;
+}
+
+.home-content-right {
+  width: 30%;
+}
+
+/* home jumbotron */
 .jumbotron-card-overlay {
   position: absolute;
   top: 0;
@@ -13,8 +49,6 @@
   justify-content: flex-end;
   padding: 4rem;
 }
-
-/* home jumbotron */
 .jumbotron-card {
   padding: 2rem;
 }
@@ -38,5 +72,14 @@
   .jumbotron-card-overlay {
     justify-content: center;
     padding: 0;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .home-content {
+    flex-direction: column;
+  }
+  .home-content-left,
+  .home-content-right {
+    width: 100%;
   }
 }

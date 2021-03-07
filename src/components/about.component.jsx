@@ -3,7 +3,7 @@ import { Box, Text } from "@chakra-ui/react"
 import "../../global.css"
 
 const About = ({ bg, color }) => (
-  <Box my={4} className="layout" bg={bg} color={color}>
+  <Box id="about" my={4} className="layout" bg={bg} color={color}>
     <Text py={4} fontSize="3xl">
       Who Am I?
     </Text>

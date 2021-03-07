@@ -7,7 +7,7 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 const Project = ({ title, description, repo, deploy }) => (
   <>
-    <Link to={deploy}>
+    <Link to={deploy} target="_blank">
       <Text py={4} fontSize="3xl">
         {title}
       </Text>
@@ -15,7 +15,7 @@ const Project = ({ title, description, repo, deploy }) => (
     <Text fontSize="lg">{description}</Text>
     <Box py={4}>
       {repo && (
-        <Link to={repo}>
+        <Link to={repo} target="_blank">
           {" "}
           <Button mr={8} p={4}>
             <Text mr={2}>Code</Text> <FontAwesomeIcon icon={faGithub} />
@@ -23,7 +23,7 @@ const Project = ({ title, description, repo, deploy }) => (
         </Link>
       )}
       {deploy && (
-        <Link to={repo}>
+        <Link to={deploy} target="_blank">
           <Button mr={8} p={4}>
             <Text>Deploy ✨</Text>
           </Button>
@@ -34,7 +34,7 @@ const Project = ({ title, description, repo, deploy }) => (
 )
 
 const Projects = ({ bg, color }) => (
-  <Box my={4} className="layout" bg={bg} color={color}>
+  <Box id="projects" my={4} className="layout" bg={bg} color={color}>
     <Project
       title={projects["surface_group"].title}
       description={projects["surface_group"].description}

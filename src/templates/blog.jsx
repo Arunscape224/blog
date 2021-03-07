@@ -1,12 +1,16 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
-import '../../global.css'
+import "../../global.css"
+import theme from "../theme"
+import { Box } from "@chakra-ui/react"
 
+import { useColorModeValue } from "@chakra-ui/color-mode"
 const PageTemplate = ({ data: { contentfulPost } }) => {
-  const { title, hero } = contentfulPost
+  const color = useColorModeValue(theme.lightMode.color, theme.darkMode.color)
+
+  const { title, hero, createdAt } = contentfulPost
   React.useEffect(() => {
-    
     try {
       const deckdeckgoLoader = require("@deckdeckgo/highlight-code/dist/loader")
 
@@ -17,9 +21,13 @@ const PageTemplate = ({ data: { contentfulPost } }) => {
   }, [])
 
   return (
-    <div className="layout">
+    <Box color={color} className="layout">
       <Img fluid={hero.fluid} />
-      <h1 className="text-center">{title}</h1>
+      <div className="p-block">
+        <h1 className="header">{title}</h1>
+        <em>by Arun Ravishankar</em>
+        <div>{createdAt}</div>
+      </div>
       {contentfulPost.childContentfulPostBodyTextNode.childMarkdownRemark
         .html && (
         <div
@@ -30,7 +38,7 @@ const PageTemplate = ({ data: { contentfulPost } }) => {
           }}
         />
       )}
-    </div>
+    </Box>
   )
 }
 
@@ -44,6 +52,7 @@ export const query = graphql`
           html
         }
       }
+      createdAt(formatString: "MMMM Do YYYY")
       id
       title
       tags
