@@ -98,6 +98,12 @@
   opacity: 1;
 }
 
+@media only screen and (max-width: 392px) {
+  .deploy-btn {
+    margin-top: 1rem;
+  }
+}
+
 @media only screen and (max-width: 700px) {
   .jumbotron-card-overlay {
     justify-content: center;

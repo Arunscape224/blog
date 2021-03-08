@@ -15,14 +15,14 @@ const Project = ({ title, description, repo, deploy }) => (
       {repo && (
         <Link to={repo} target="_blank">
           {" "}
-          <Button mr={8} p={4}>
+          <Button className="code-btn" mr={8} p={4}>
             <Text mr={2}>Code</Text> <FontAwesomeIcon icon={faGithub} />
           </Button>
         </Link>
       )}
       {deploy && (
         <Link to={deploy} target="_blank">
-          <Button mr={8} p={4}>
+          <Button className="deploy-btn" mr={8} p={4}>
             <Text>Deploy ✨</Text>
           </Button>
         </Link>
