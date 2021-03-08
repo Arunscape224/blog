@@ -8,13 +8,7 @@ const About = ({ bg, color }) => (
       Who Am I?
     </Text>
     <Text fontSize="lg">
-      I am a Chicago based Web developer who specializes in creating responsive,
-      dynamic web applications with Javascript. I am currently building an
-      ecommerce website for a company called Surface Group International using
-      MongoDB, Express, React, Redux, and Node.js. I am constantly learning, and
-      am always willing to take on new challenges. My goal is to grow with a
-      fast paced team that practices Agile methodology and exercises best
-      practices.
+      Hi! I'm a dev based in Chicago. I love buiding and designing things, and creating intuitive, fun user experiences. When I'm not working on projects or learning new tech, I'm recording something, skating or playing guitar.  
     </Text>
   </Box>
 )

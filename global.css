@@ -16,6 +16,17 @@
 }
 /* ----- */
 
+/* Algolia Stuff. */
+.hit:hover {
+  color: #5368ff;
+  background-color: #d0d0d0;
+}
+.algolia-branding {
+  width: 8rem;
+}
+/* ----- */
+
+/* Layout */
 .layout {
   padding-left: 4rem;
   padding-right: 4rem;
@@ -37,6 +48,14 @@
   position: relative;
 }
 
+.col-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* ----- */
+
+/* Home Page */
 .home-content {
   display: flex;
 }
@@ -74,12 +93,6 @@
   opacity: 1;
 }
 
-.col-center {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 @media only screen and (max-width: 700px) {
   .jumbotron-card-overlay {
     justify-content: center;
@@ -95,11 +108,16 @@
     width: 100%;
   }
 }
+/* ----- */
 
-/* Overrides */ 
-
-.ais-SearchBox-resetIcon, .ais-SearchBox-submitIcon {
+/* Overrides */
+.ais-SearchBox-resetIcon,
+.ais-SearchBox-submitIcon {
   display: none;
+}
+.ais-SearchBox-form {
+  padding-left: 2.6rem;
+  padding-right: 2.6rem;
 }
 .ais-SearchBox-form > input {
   width: 100%;
@@ -108,4 +126,7 @@
   padding-left: 1rem;
   padding-right: 1rem;
 }
-
+.ais-Hits-list {
+  list-style: none;
+}
+/* ----- */

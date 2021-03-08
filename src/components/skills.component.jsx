@@ -30,7 +30,7 @@ const learning = [
   "Supercollider",
 ]
 const Skills = ({ bg, color }) => (
-  <Box id="skills" my={4} className="layout" bg={bg} color={color}>
+  <Box id="skills" my={4} className="layout" bg={bg} color={color} pb={4}>
     <Text py={4} fontSize="3xl">
       Proficient In:
     </Text>

@@ -16,7 +16,7 @@ import {
 } from "@chakra-ui/react"
 import { HamburgerIcon, CloseIcon, SearchIcon } from "@chakra-ui/icons"
 
-export default function Header({showSearch, setShowSearch}) {
+export default function Header({ showSearch, setShowSearch }) {
   const { isOpen, onToggle } = useDisclosure()
 
   return (
@@ -58,8 +58,15 @@ export default function Header({showSearch, setShowSearch}) {
           direction={"row"}
           spacing={6}
         >
-          <Box as="div" position="fixed" right="15px" top="10px">
-            {!showSearch ? <SearchIcon mr={4} onClick={() => setShowSearch(true)} /> : <CloseIcon mr={4}  onClick={() => setShowSearch(false)} /> }
+          <Box as="div" mt={2}>
+          {!showSearch ? (
+              <SearchIcon w={3} h={3} onClick={() => setShowSearch(true)} />
+            ) : (
+              <CloseIcon w={3} h={3} onClick={() => setShowSearch(false)} />
+            )}
+          </Box>
+          <Box as="div">
+      
             <ThemeToggle />
           </Box>
         </Stack>
