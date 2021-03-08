@@ -21,7 +21,6 @@ const PageTemplate = ({ data: { contentfulPost } }) => {
   React.useEffect(() => {
     try {
       const deckdeckgoLoader = require("@deckdeckgo/highlight-code/dist/loader")
-
       deckdeckgoLoader.defineCustomElements(window)
     } catch (err) {
       console.error(err)
