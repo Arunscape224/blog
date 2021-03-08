@@ -169,23 +169,23 @@ interface NavItem {
 const NAV_ITEMS: Array<NavItem> = [
   {
     label: "Home",
-    href: "http://localhost:8000/",
+    href: "http://localhost:8888/",
   },
   {
     label: "About",
-    href: "http://localhost:8000/#about",
+    href: "http://localhost:8888/#about",
   },
   {
     label: "Skills",
-    href: "http://localhost:8000/#skills",
+    href: "http://localhost:8888/#skills",
   },
   {
     label: "Projects",
-    href: "http://localhost:8000/#projects",
+    href: "http://localhost:8888/#projects",
   },
   {
     label: "Contact",
-    href: "http://localhost:8000/#contact",
+    href: "http://localhost:8888/#contact",
   },
   {
     label: "Blog",

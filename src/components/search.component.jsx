@@ -12,17 +12,17 @@ const Search = () => {
   return (
     <Box m={5} borderBottom="1px">
       <InstantSearch searchClient={searchClient} indexName="dev_BLOG">
-      <SearchBox />
-      <Hits hitComponent={SearchHit} />
-      <Flex justifyContent="flex-end" mr={2}>
-        {" "}
-        <img
-          className="algolia-branding"
-          src="https://res.cloudinary.com/surface-group/image/upload/v1613271155/search-by-algolia-light-background_jamw6m.svg"
-          alt="algolia branding"
-        />
-      </Flex>
-    </InstantSearch>
+        <SearchBox />
+        <Hits hitComponent={SearchHit} />
+        <Flex justifyContent="flex-end" mr={2}>
+          {" "}
+          <img
+            className="algolia-branding"
+            src="https://res.cloudinary.com/surface-group/image/upload/v1613271155/search-by-algolia-light-background_jamw6m.svg"
+            alt="algolia branding"
+          />
+        </Flex>
+      </InstantSearch>
     </Box>
   )
 }

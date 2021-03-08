@@ -10,7 +10,7 @@ import { useColorModeValue } from "@chakra-ui/color-mode"
 import theme from "../theme"
 import "../../global.css"
 import BlogCard from "../components/blog-card.component"
-import { Box, Heading } from "@chakra-ui/react"
+import { Box, Heading, Button, Flex } from "@chakra-ui/react"
 import { Link } from "gatsby"
 function Home({ data }) {
   // Using theme bg with alpha
@@ -50,6 +50,13 @@ function Home({ data }) {
               </Link>
             ))}
           </Box>
+
+          <Flex justifyContent="center" py={8}>
+            <Link to="/blog">
+            <Button border="1px" bg="bg" borderColor="#e9d8fd">
+              View Blog
+            </Button></Link>{" "}
+          </Flex>
         </Box>
       </div>
       <ContactForm bg={bg} color={color} />
@@ -61,7 +68,7 @@ export default Home
 
 export const HomeQuery = graphql`
   {
-    allContentfulPost {
+    allContentfulPost(limit: 4) {
       edges {
         node {
           createdAt(formatString: "MMMM Do YYYY")

@@ -7,7 +7,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header showSearch={showSearch} setShowSearch={setShowSearch} />
-      {showSearch && <Search showSearch={showSearch} />}
+      {showSearch && <Search />}
       <main>{children}</main>
     </>
   )

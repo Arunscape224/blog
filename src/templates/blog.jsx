@@ -4,6 +4,7 @@ import Img from "gatsby-image"
 import "../../global.css"
 import theme from "../theme"
 import { Box } from "@chakra-ui/react"
+// import { DiscussionEmbed } from "disqus-react"
 
 import { useColorModeValue } from "@chakra-ui/color-mode"
 const PageTemplate = ({ data: { contentfulPost } }) => {
@@ -38,6 +39,16 @@ const PageTemplate = ({ data: { contentfulPost } }) => {
           }}
         />
       )}
+
+      {/* <DiscussionEmbed
+        shortname="example"
+        config={{
+          url: this.props.article.url,
+          identifier: this.props.article.id,
+          title: this.props.article.title,
+          language: "en-US", //e.g. for Traditional Chinese (Taiwan)
+        }}
+      /> */}
     </Box>
   )
 }
