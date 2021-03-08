@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import theme from "../theme"
 import { useColorModeValue } from "@chakra-ui/color-mode"
 import { Box, Text, Heading } from "@chakra-ui/react"
@@ -8,7 +8,12 @@ const BlogCard = ({
   post: { title, hero, createdAt, childContentfulPostBodyTextNode },
 }) => {
   const color = useColorModeValue(theme.lightMode.color, theme.darkMode.color)
-
+  const [excerpt, setExcerpt] = useState("")
+  useEffect(() => {
+    setExcerpt(
+      grabText(childContentfulPostBodyTextNode.childMarkdownRemark.excerpt)
+    )
+  }, [])
   return (
     <Box my={4} shadow="lg" border="1px" borderColor={color} color={color}>
       <Img fluid={hero.fluid} />
@@ -18,9 +23,7 @@ const BlogCard = ({
         </Heading>
         <Text fontSize="sm">{createdAt}</Text>
         <Text py={3} fontSize="1xl" isTruncated>
-          {grabText(
-            childContentfulPostBodyTextNode.childMarkdownRemark.excerpt
-          )}
+          {excerpt}
         </Text>
       </Box>
     </Box>
