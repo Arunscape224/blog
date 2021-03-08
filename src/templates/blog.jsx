@@ -4,13 +4,20 @@ import Img from "gatsby-image"
 import "../../global.css"
 import theme from "../theme"
 import { Box } from "@chakra-ui/react"
-// import { DiscussionEmbed } from "disqus-react"
+import { DiscussionEmbed } from "disqus-react"
 
 import { useColorModeValue } from "@chakra-ui/color-mode"
 const PageTemplate = ({ data: { contentfulPost } }) => {
   const color = useColorModeValue(theme.lightMode.color, theme.darkMode.color)
+  const { title, hero, createdAt, id, slug } = contentfulPost
 
-  const { title, hero, createdAt } = contentfulPost
+  const baseUrl = "https://www.arunravishankar.com/"
+  const disqusConfig = {
+    identifier: id,
+    title: title,
+    url: baseUrl + slug,
+  }
+
   React.useEffect(() => {
     try {
       const deckdeckgoLoader = require("@deckdeckgo/highlight-code/dist/loader")
@@ -40,15 +47,10 @@ const PageTemplate = ({ data: { contentfulPost } }) => {
         />
       )}
 
-      {/* <DiscussionEmbed
-        shortname="example"
-        config={{
-          url: this.props.article.url,
-          identifier: this.props.article.id,
-          title: this.props.article.title,
-          language: "en-US", //e.g. for Traditional Chinese (Taiwan)
-        }}
-      /> */}
+      <DiscussionEmbed
+        shortname="https-www-arunravishankar-com"
+        config={disqusConfig}
+      />
     </Box>
   )
 }
