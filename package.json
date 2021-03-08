@@ -25,6 +25,7 @@
     "@fortawesome/react-fontawesome": "^0.1.14",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
+    "algoliasearch": "^4.8.5",
     "babel-plugin-prismjs": "^2.0.1",
     "babel-preset-gatsby": "^1.0.0",
     "framer-motion": "^3.10.0",
@@ -41,6 +42,7 @@
     "prismjs": "^1.23.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-instantsearch-dom": "^6.10.3",
     "sass": "^1.32.8"
   },
   "devDependencies": {

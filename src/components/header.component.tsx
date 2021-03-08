@@ -14,9 +14,9 @@ import {
   useColorModeValue,
   useDisclosure,
 } from "@chakra-ui/react"
-import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons"
+import { HamburgerIcon, CloseIcon, SearchIcon } from "@chakra-ui/icons"
 
-export default function Header() {
+export default function Header({showSearch, setShowSearch}) {
   const { isOpen, onToggle } = useDisclosure()
 
   return (
@@ -59,6 +59,7 @@ export default function Header() {
           spacing={6}
         >
           <Box as="div" position="fixed" right="15px" top="10px">
+            {!showSearch ? <SearchIcon mr={4} onClick={() => setShowSearch(true)} /> : <CloseIcon mr={4}  onClick={() => setShowSearch(false)} /> }
             <ThemeToggle />
           </Box>
         </Stack>
@@ -174,6 +175,10 @@ const NAV_ITEMS: Array<NavItem> = [
   {
     label: "Projects",
     href: "http://localhost:8000/#projects",
+  },
+  {
+    label: "Contact",
+    href: "http://localhost:8000/#contact",
   },
   {
     label: "Blog",

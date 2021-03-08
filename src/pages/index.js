@@ -5,6 +5,7 @@ import JumbotronCard from "../components/jumbotron-card.component"
 import About from "../components/about.component"
 import Skills from "../components/skills.component"
 import Projects from "../components/projects.component"
+import ContactForm from "../components/contact.component"
 import { useColorModeValue } from "@chakra-ui/color-mode"
 import theme from "../theme"
 import "../../global.css"
@@ -39,7 +40,7 @@ function Home({ data }) {
           color={color}
         >
           <Heading py={5} fontSize="2xl" textAlign="center">
-            Blog Posts
+            Recent Posts
           </Heading>
 
           <Box my={4}>
@@ -51,6 +52,7 @@ function Home({ data }) {
           </Box>
         </Box>
       </div>
+      <ContactForm bg={bg} color={color} />
     </>
   )
 }

@@ -16,9 +16,6 @@ const BlogCard = ({
         <Heading fontSize="2xl" isTruncated>
           {title}
         </Heading>
-        <Text as="i" fontSize="1xl">
-          by Arun Ravishankar
-        </Text>
         <Text fontSize="sm">{createdAt}</Text>
         <Text py={3} fontSize="1xl" isTruncated>
           {grabText(

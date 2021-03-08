@@ -7,11 +7,9 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 const Project = ({ title, description, repo, deploy }) => (
   <>
-    <Link to={deploy} target="_blank">
-      <Text py={4} fontSize="3xl">
-        {title}
-      </Text>
-    </Link>
+    <Text py={4} fontSize="3xl">
+      {title}
+    </Text>
     <Text fontSize="lg">{description}</Text>
     <Box py={4}>
       {repo && (
