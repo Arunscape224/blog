@@ -8,7 +8,11 @@ const About = ({ bg, color }) => (
       Who Am I?
     </Text>
     <Text fontSize="lg">
-      Hi! I'm a dev based in Chicago. I love buiding and designing things, and creating intuitive, fun user experiences. When I'm not working on projects or learning new tech, I'm recording something, skating or playing guitar.  
+      I'm a Front End Developer based in Chicago. I love building and designing websites,
+      and creating intuitive, fun user experiences. I love picking up new
+      hobbies and watching / learning from new tutorials! When I'm not working
+      on projects or learning new tech, I'm recording something, skating or
+      playing guitar.
     </Text>
   </Box>
 )

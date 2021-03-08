@@ -6,10 +6,16 @@
   font-size: 2rem;
 }
 
+.block-quote {
+  font-size: 2rem;
+  font-style: italic;
+}
+
 .p-block {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
+
 
 .img-100 {
   width: 100%;
