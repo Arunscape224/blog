@@ -169,23 +169,23 @@ interface NavItem {
 const NAV_ITEMS: Array<NavItem> = [
   {
     label: "Home",
-    href: "http://localhost:8888/",
+    href: "https://www.arunravishankar.com/",
   },
   {
     label: "About",
-    href: "http://localhost:8888/#about",
+    href: "https://www.arunravishankar.com//#about",
   },
   {
     label: "Skills",
-    href: "http://localhost:8888/#skills",
+    href: "https://www.arunravishankar.com//#skills",
   },
   {
     label: "Projects",
-    href: "http://localhost:8888/#projects",
+    href: "https://www.arunravishankar.com//#projects",
   },
   {
     label: "Contact",
-    href: "http://localhost:8888/#contact",
+    href: "https://www.arunravishankar.com//#contact",
   },
   {
     label: "Blog",
