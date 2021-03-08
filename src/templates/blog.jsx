@@ -3,13 +3,13 @@ import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import "../../global.css"
 import theme from "../theme"
-import { Box } from "@chakra-ui/react"
+import { Box, Badge } from "@chakra-ui/react"
 import { DiscussionEmbed } from "disqus-react"
 
 import { useColorModeValue } from "@chakra-ui/color-mode"
 const PageTemplate = ({ data: { contentfulPost } }) => {
   const color = useColorModeValue(theme.lightMode.color, theme.darkMode.color)
-  const { title, hero, createdAt, id, slug } = contentfulPost
+  const { title, hero, createdAt, id, slug, tags } = contentfulPost
 
   const baseUrl = "https://www.arunravishankar.com/"
   const disqusConfig = {
@@ -45,6 +45,14 @@ const PageTemplate = ({ data: { contentfulPost } }) => {
           }}
         />
       )}
+
+      <Box my={4} w="100%">
+        {tags.map((tag, i) => (
+          <Badge mr={4} colorScheme="purple" key={i}>
+            #{tag}
+          </Badge>
+        ))}
+      </Box>
 
       <DiscussionEmbed
         shortname="https-www-arunravishankar-com"
