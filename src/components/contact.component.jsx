@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import {
   Box,
   Heading,
@@ -9,6 +9,7 @@ import {
   Input,
 } from "@chakra-ui/react"
 import "../../global.css"
+import { navigate } from "gatsby"
 const ContactForm = ({ bg, color }) => {
   return (
     <Box
@@ -31,30 +32,53 @@ const ContactForm = ({ bg, color }) => {
           Hire me for your next project! Send me an email through this form, or
           at{" "}
           <strong>
-            <a href="#">audionekt@gmail.com</a>
+            <a href="audionekt@gmail.com">audionekt@gmail.com</a>
           </strong>
           . I will get back to you in 2-3 business days.{" "}
         </Text>
       </Box>
-      <FormControl textAlign="center" w="50%" m="auto" id="email" my={4}>
-        <Box my={4}>
-          <Input focusBorderColor="#E9D8FD" placeholder="Email" type="email" />
-        </Box>
-        <Box my={4}>
-          <Input focusBorderColor="#E9D8FD" placeholder="Subject" type="text" />
-        </Box>
-        <Box my={4}>
-          <Textarea
-            focusBorderColor="#E9D8FD"
-            placeholder="Type message here.."
-          />
-        </Box>
-        <Box my={4}>
-          <Button border="1px" bg="bg" borderColor="#e9d8fd">
-            Submit
-          </Button>
-        </Box>
-      </FormControl>
+      <form
+        name="contact"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+      >
+        <input type="hidden" name="bot-field" />
+        <FormControl textAlign="center" w="50%" m="auto" id="email" my={4}>
+          <Box my={4}>
+            <Input
+              focusBorderColor="#E9D8FD"
+              placeholder="Email"
+              type="email"
+              name="email"
+              id="email"
+            />
+          </Box>
+          <Box my={4}>
+            <Input
+              focusBorderColor="#E9D8FD"
+              placeholder="Subject"
+              type="text"
+              name="subject"
+              id="subject"
+            />
+          </Box>
+          <Box my={4}>
+            <Textarea
+              focusBorderColor="#E9D8FD"
+              placeholder="Type message here.."
+              name="text"
+              id="text"
+              name="text"
+            />
+          </Box>
+          <Box my={4}>
+            <Button type="submit" border="1px" bg="bg" borderColor="#e9d8fd">
+              Submit
+            </Button>
+          </Box>
+        </FormControl>
+      </form>
     </Box>
   )
 }

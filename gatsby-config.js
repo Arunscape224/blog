@@ -4,6 +4,10 @@ require("dotenv").config({
 
 module.exports = {
   /* Your site config here */
+  proxy: {
+    prefix: "/",
+    url: "http://localhost:8888/",
+  },
   plugins: [
     `@chakra-ui/gatsby-plugin`,
     `gatsby-plugin-sass`,
