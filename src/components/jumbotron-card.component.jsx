@@ -20,10 +20,10 @@ const JumbotronCard = ({ bg, color }) => {
         bg={bg}
         color={color}
       >
-        <Heading as="h1" size="2xl">
+        <Heading className="jumbo-name" as="h1" size="2xl">
           Arun Ravishankar
         </Heading>
-        <Text as="i" fontSize="2xl">
+        <Text className="jumbo-title" as="i" fontSize="2xl">
           Front End Developer
         </Text>
         {/* Social Media */}
@@ -34,7 +34,7 @@ const JumbotronCard = ({ bg, color }) => {
           animationOutDuration={1000}
           isVisible={true}
         >
-          <Box color={color}>
+          <Box color={color} className="jumbo-icons">
             <Link to="https://github.com/Arunscape224" target="_blank">
               <FontAwesomeIcon className="social-icon" icon={faGithubAlt} />
             </Link>

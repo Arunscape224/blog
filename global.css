@@ -16,7 +16,6 @@
   margin-bottom: 2rem;
 }
 
-
 .img-100 {
   width: 100%;
 }
@@ -105,6 +104,22 @@
     padding: 0;
   }
 }
+
+@media only screen and (max-width: 733px) {
+  .jumbotron-card {
+    padding: 1rem;
+  }
+  .jumbo-name {
+    font-size: 1.5rem !important;
+  }
+  .jumbo-title {
+    font-size: 1rem !important;
+  }
+  .social-icon {
+    font-size: 1.5rem !important;
+  }
+}
+
 @media only screen and (max-width: 1200px) {
   .home-content {
     flex-direction: column;
