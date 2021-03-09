@@ -47,6 +47,7 @@ const ContactForm = ({ bg, color }) => {
         <FormControl textAlign="center" w="50%" m="auto" id="email" my={4}>
           <Box my={4}>
             <Input
+              required
               focusBorderColor="#E9D8FD"
               placeholder="Email"
               type="email"
@@ -56,6 +57,7 @@ const ContactForm = ({ bg, color }) => {
           </Box>
           <Box my={4}>
             <Input
+              required
               focusBorderColor="#E9D8FD"
               placeholder="Subject"
               type="text"
@@ -65,6 +67,7 @@ const ContactForm = ({ bg, color }) => {
           </Box>
           <Box my={4}>
             <Textarea
+              required
               focusBorderColor="#E9D8FD"
               placeholder="Type message here.."
               name="text"
