@@ -155,3 +155,6 @@
   list-style: none;
 }
 /* ----- */
+
+/* remove disqus adds */
+iframe[src*="ads-iframe"] { display: none; }
