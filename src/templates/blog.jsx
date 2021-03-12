@@ -46,6 +46,10 @@ const PageTemplate = ({ data: { contentfulPost } }) => {
         />
       )}
 
+      <DiscussionEmbed
+        shortname="https-www-arunravishankar-com"
+        config={disqusConfig}
+      />
       <Box my={4} w="100%">
         {tags.map((tag, i) => (
           <Badge mr={4} colorScheme="purple" key={i}>
@@ -53,11 +57,6 @@ const PageTemplate = ({ data: { contentfulPost } }) => {
           </Badge>
         ))}
       </Box>
-
-      <DiscussionEmbed
-        shortname="https-www-arunravishankar-com"
-        config={disqusConfig}
-      />
     </Box>
   )
 }
