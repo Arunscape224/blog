@@ -34,9 +34,8 @@ function Home({ data }) {
           <Projects bg={bg} color={color} />
         </Box>
         <Box
-          className="layout"
           py={4}
-          className="home-content-right layout"
+          className="home-content-right recent-posts"
           color={color}
         >
           <Heading py={5} fontSize="2xl" textAlign="center">

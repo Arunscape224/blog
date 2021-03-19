@@ -36,6 +36,10 @@
   padding-left: 13rem;
   padding-right: 13rem;
 }
+.recent-posts {
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
 
 .grid-container {
   width: 100%;
