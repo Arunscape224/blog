@@ -12,7 +12,7 @@ import "../../global.css"
 import BlogCard from "../components/blog-card.component"
 import { Box, Heading, Button, Flex } from "@chakra-ui/react"
 import { Link } from "gatsby"
-import SEO from "../components/seo.component"
+import Helmet from "react-helmet"
 function Home({ data }) {
   // Using theme bg with alpha
   const bg = useColorModeValue(
@@ -25,11 +25,18 @@ function Home({ data }) {
   const siteMetadata = data.site.siteMetadata
   return (
     <>
-      <SEO
-        title={siteMetadata.title}
-        description={siteMetadata.description}
-        image={siteMetadata.image}
-      />
+      <Helmet>
+        <title>{siteMetadata.title}</title>
+        <meta name="description" content={siteMetadata.description} />
+        <meta name="keyword" content="" />
+        <meta property="og:title" content={siteMetadata.title} />
+        <meta property="og:description" content={siteMetadata.description} />
+        <meta property="og:image" content={siteMetadata.image} />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:url" content={siteMetadata.url} />
+        <meta property="og:type" content="website" />
+        <link rel="canonical" href={siteMetadata.url} />
+      </Helmet>
       <div className="p-relative">
         <Img fluid={fluid} />
         <JumbotronCard bg={bg} color={color} />
@@ -73,9 +80,11 @@ export const HomeQuery = graphql`
   {
     site {
       siteMetadata {
+        title
         author
         description
         image
+        url
       }
     }
     allContentfulPost(limit: 4) {

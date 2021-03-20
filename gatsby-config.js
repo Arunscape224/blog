@@ -18,6 +18,7 @@ module.exports = {
     url: "http://localhost:8888/",
   },
   plugins: [
+    `gatsby-plugin-react-helmet`,
     `@chakra-ui/gatsby-plugin`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-sharp`,

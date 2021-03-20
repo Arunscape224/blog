@@ -5,8 +5,8 @@ import "../../global.css"
 import theme from "../theme"
 import { Box, Badge } from "@chakra-ui/react"
 import { DiscussionEmbed } from "disqus-react"
-import SEO from "../components/seo.component"
 import { grabText } from "../util/helper"
+import Helmet from "react-helmet"
 
 import { useColorModeValue } from "@chakra-ui/color-mode"
 const PageTemplate = ({ data: { contentfulPost } }) => {
@@ -24,7 +24,7 @@ const PageTemplate = ({ data: { contentfulPost } }) => {
   React.useEffect(() => {
     setExcerpt(
       grabText(
-        contentfulPost.childContentfulPostBodyTextNode.childMarkdownRemark.html
+        contentfulPost.childContentfulPostBodyTextNode.childMarkdownRemark.excerpt
       )
     )
     try {
@@ -36,37 +36,49 @@ const PageTemplate = ({ data: { contentfulPost } }) => {
   }, [])
 
   return (
-    <Box color={color} className="layout">
-      <SEO title={title} description={excerpt} image={'https:' + hero.fluid.src}/>
-      <Img fluid={hero.fluid} className="blog-img" />
-      <div className="p-block">
-        <h1 className="header">{title}</h1>
-        <em>by Arun Ravishankar</em>
-        <div>{createdAt}</div>
-      </div>
-      {contentfulPost.childContentfulPostBodyTextNode.childMarkdownRemark
-        .html && (
-        <div
-          dangerouslySetInnerHTML={{
-            __html:
-              contentfulPost.childContentfulPostBodyTextNode.childMarkdownRemark
-                .html,
-          }}
-        />
-      )}
+    <>
+      <Helmet>
+        <title>{title}</title>
+        <meta name="description" content={excerpt} />
+        <meta name="keyword" content="" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={excerpt} />
+        <meta property="og:image" content={`https:${hero.fluid.src}`} />
+        <meta property="og:url" content={`${baseUrl}/blog/${slug}`} />
+        <meta property="og:type" content="website" />
+        <link rel="canonical" href={`${baseUrl}/blog/${slug}`} />
+      </Helmet>
+      <Box color={color} className="layout">
+        <Img fluid={hero.fluid} className="blog-img" />
+        <div className="p-block">
+          <h1 className="header" onClick={() => console.log(excerpt)}>{title}</h1>
+          <em>by Arun Ravishankar</em>
+          <div>{createdAt}</div>
+        </div>
+        {contentfulPost.childContentfulPostBodyTextNode.childMarkdownRemark
+          .html && (
+          <div
+            dangerouslySetInnerHTML={{
+              __html:
+                contentfulPost.childContentfulPostBodyTextNode
+                  .childMarkdownRemark.html,
+            }}
+          />
+        )}
 
-      <DiscussionEmbed
-        shortname="https-www-arunravishankar-com"
-        config={disqusConfig}
-      />
-      <Box my={4} w="100%">
-        {tags.map((tag, i) => (
-          <Badge mr={4} colorScheme="purple" key={i}>
-            #{tag}
-          </Badge>
-        ))}
+        <DiscussionEmbed
+          shortname="https-www-arunravishankar-com"
+          config={disqusConfig}
+        />
+        <Box my={4} w="100%">
+          {tags.map((tag, i) => (
+            <Badge mr={4} colorScheme="purple" key={i}>
+              #{tag}
+            </Badge>
+          ))}
+        </Box>
       </Box>
-    </Box>
+    </>
   )
 }
 
@@ -78,6 +90,7 @@ export const query = graphql`
       childContentfulPostBodyTextNode {
         childMarkdownRemark {
           html
+          excerpt(format: HTML, pruneLength: 0)
         }
       }
       createdAt(formatString: "MMMM Do YYYY")

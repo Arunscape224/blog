@@ -9,7 +9,6 @@ import {
   Input,
 } from "@chakra-ui/react"
 import "../../global.css"
-import { navigate } from "gatsby"
 const ContactForm = ({ bg, color }) => {
   return (
     <Box
