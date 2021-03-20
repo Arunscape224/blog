@@ -37,7 +37,7 @@ const PageTemplate = ({ data: { contentfulPost } }) => {
 
   return (
     <Box color={color} className="layout">
-      <SEO title={title} description={excerpt} image={hero.fluid.src}/>
+      <SEO title={title} description={excerpt} image={'https:' + hero.fluid.src}/>
       <Img fluid={hero.fluid} className="blog-img" />
       <div className="p-block">
         <h1 className="header">{title}</h1>
