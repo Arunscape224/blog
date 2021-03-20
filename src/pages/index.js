@@ -12,6 +12,7 @@ import "../../global.css"
 import BlogCard from "../components/blog-card.component"
 import { Box, Heading, Button, Flex } from "@chakra-ui/react"
 import { Link } from "gatsby"
+import SEO from "../components/seo.component"
 function Home({ data }) {
   // Using theme bg with alpha
   const bg = useColorModeValue(
@@ -21,9 +22,15 @@ function Home({ data }) {
   const color = useColorModeValue(theme.lightMode.color, theme.darkMode.color)
   const fluid = data.file.childImageSharp.fluid
   const posts = data.allContentfulPost.edges
+  const siteMetadata = data.site.siteMetadata
   return (
     <>
-      <div className="p-relative" onClick={() => console.log(posts)}>
+      <SEO
+        title={siteMetadata.title}
+        description={siteMetadata.description}
+        image={siteMetadata.image}
+      />
+      <div className="p-relative">
         <Img fluid={fluid} />
         <JumbotronCard bg={bg} color={color} />
       </div>
@@ -33,11 +40,7 @@ function Home({ data }) {
           <Skills bg={bg} color={color} />
           <Projects bg={bg} color={color} />
         </Box>
-        <Box
-          py={4}
-          className="home-content-right recent-posts"
-          color={color}
-        >
+        <Box py={4} className="home-content-right recent-posts" color={color}>
           <Heading py={5} fontSize="2xl" textAlign="center">
             Recent Posts
           </Heading>
@@ -52,9 +55,10 @@ function Home({ data }) {
 
           <Flex justifyContent="center" py={8}>
             <Link to="/blog">
-            <Button border="1px" bg="bg" borderColor="#e9d8fd">
-              View Blog
-            </Button></Link>{" "}
+              <Button border="1px" bg="bg" borderColor="#e9d8fd">
+                View Blog
+              </Button>
+            </Link>{" "}
           </Flex>
         </Box>
       </div>
@@ -67,6 +71,13 @@ export default Home
 
 export const HomeQuery = graphql`
   {
+    site {
+      siteMetadata {
+        author
+        description
+        image
+      }
+    }
     allContentfulPost(limit: 4) {
       edges {
         node {

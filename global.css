@@ -19,6 +19,12 @@
 .img-100 {
   width: 100%;
 }
+.blog-link {
+  color: green !important
+}
+.blog-link:hover {
+  color: purple !important
+}
 /* ----- */
 
 /* Algolia Stuff. */
@@ -39,6 +45,11 @@
 .recent-posts {
   padding-left: 4rem;
   padding-right: 4rem;
+}
+
+.blog-img {
+  margin-top: 2rem
+  /* margint */
 }
 
 .grid-container {

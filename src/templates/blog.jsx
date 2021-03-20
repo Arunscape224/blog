@@ -5,11 +5,14 @@ import "../../global.css"
 import theme from "../theme"
 import { Box, Badge } from "@chakra-ui/react"
 import { DiscussionEmbed } from "disqus-react"
+import SEO from "../components/seo.component"
+import { grabText } from "../util/helper"
 
 import { useColorModeValue } from "@chakra-ui/color-mode"
 const PageTemplate = ({ data: { contentfulPost } }) => {
   const color = useColorModeValue(theme.lightMode.color, theme.darkMode.color)
   const { title, hero, createdAt, id, slug, tags } = contentfulPost
+  const [excerpt, setExcerpt] = React.useState("")
 
   const baseUrl = "https://www.arunravishankar.com/"
   const disqusConfig = {
@@ -19,6 +22,11 @@ const PageTemplate = ({ data: { contentfulPost } }) => {
   }
 
   React.useEffect(() => {
+    setExcerpt(
+      grabText(
+        contentfulPost.childContentfulPostBodyTextNode.childMarkdownRemark.html
+      )
+    )
     try {
       const deckdeckgoLoader = require("@deckdeckgo/highlight-code/dist/loader")
       deckdeckgoLoader.defineCustomElements(window)
@@ -29,7 +37,8 @@ const PageTemplate = ({ data: { contentfulPost } }) => {
 
   return (
     <Box color={color} className="layout">
-      <Img fluid={hero.fluid} />
+      <SEO title={title} description={excerpt} image={hero.fluid.src}/>
+      <Img fluid={hero.fluid} className="blog-img" />
       <div className="p-block">
         <h1 className="header">{title}</h1>
         <em>by Arun Ravishankar</em>

@@ -4,6 +4,15 @@ require("dotenv").config({
 
 module.exports = {
   /* Your site config here */
+  siteMetadata: {
+    title: "Code & Thoughts",
+    description:
+      "A blog where I can share programming concepts and my experiences.",
+    url: "https://www.arunravishankar.com/",
+    twitterUsername: "@Arunrav182",
+    author: "Arun Ravishankar",
+    image: "https://pbs.twimg.com/profile_images/1366599365457043464/5rhUzg5h_400x400.jpg"
+  },
   proxy: {
     prefix: "/",
     url: "http://localhost:8888/",
