@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useContext } from "react"
 import ThemeToggle from "./toggle-theme"
 import theme from "../theme"
 import {
@@ -15,10 +15,11 @@ import {
   useDisclosure,
 } from "@chakra-ui/react"
 import { HamburgerIcon, CloseIcon, SearchIcon } from "@chakra-ui/icons"
+import { SearchBarContext } from "../search-bar-context"
 
-export default function Header({ showSearch, setShowSearch }) {
+export default function Header() {
   const { isOpen, onToggle } = useDisclosure()
-
+  const { showSearch, setShowSearch } = useContext(SearchBarContext)
   return (
     <Box>
       <Flex
@@ -59,14 +60,13 @@ export default function Header({ showSearch, setShowSearch }) {
           spacing={6}
         >
           <Box as="div" mt={2}>
-          {!showSearch ? (
+            {!showSearch ? (
               <SearchIcon w={3} h={3} onClick={() => setShowSearch(true)} />
             ) : (
               <CloseIcon w={3} h={3} onClick={() => setShowSearch(false)} />
             )}
           </Box>
           <Box as="div">
-      
             <ThemeToggle />
           </Box>
         </Stack>
