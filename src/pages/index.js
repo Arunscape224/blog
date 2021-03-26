@@ -19,6 +19,12 @@ function Home({ data }) {
     "rgba(255, 255, 255, 0.7)",
     "rgba(104, 106, 106, 0.7)"
   )
+  // using same values for now.. may change gradient for light vs dark in the future. Not super important
+  const bgGradient = useColorModeValue(
+    "linear-gradient(90deg, rgba(199,217,246,1) 0%, rgba(255,255,255,1) 100%)",
+    "linear-gradient(90deg, rgba(199,217,246,1) 0%, rgba(255,255,255,1) 100%)"
+  )
+
   const color = useColorModeValue(theme.lightMode.color, theme.darkMode.color)
   const fluid = data.file.childImageSharp.fluid
   const posts = data.allContentfulPost.edges
@@ -37,10 +43,10 @@ function Home({ data }) {
         <meta property="og:type" content="website" />
         <link rel="canonical" href={siteMetadata.url} />
       </Helmet>
-      <div className="p-relative">
+      <Box className="p-relative" bg={bgGradient}>
         <Img fluid={fluid} />
         <JumbotronCard bg={bg} color={color} />
-      </div>
+      </Box>
       <div className="home-content">
         <Box className="home-content-left">
           <About bg={bg} color={color} />
@@ -62,7 +68,7 @@ function Home({ data }) {
 
           <Flex justifyContent="center" py={8}>
             <Link to="/blog">
-              <Button border="1px" bg="bg" borderColor="#e9d8fd">
+              <Button border="1px" bg="bg">
                 View Blog
               </Button>
             </Link>{" "}
@@ -109,7 +115,7 @@ export const HomeQuery = graphql`
         }
       }
     }
-    file(extension: { eq: "jpg" }, name: { eq: "star-banner" }) {
+    file(extension: { eq: "png" }, name: { eq: "star-banner" }) {
       childImageSharp {
         fluid(maxWidth: 1800) {
           ...GatsbyImageSharpFluid

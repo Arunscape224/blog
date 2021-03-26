@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import {
   Box,
   Heading,
@@ -75,7 +75,7 @@ const ContactForm = ({ bg, color }) => {
             />
           </Box>
           <Box my={4}>
-            <Button type="submit" border="1px" bg="bg" borderColor="#e9d8fd">
+            <Button type="submit" border="1px" bg="bg">
               Submit
             </Button>
           </Box>
