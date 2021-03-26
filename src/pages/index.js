@@ -19,10 +19,9 @@ function Home({ data }) {
     "rgba(255, 255, 255, 0.7)",
     "rgba(104, 106, 106, 0.7)"
   )
-  // using same values for now.. may change gradient for light vs dark in the future. Not super important
   const bgGradient = useColorModeValue(
-    "linear-gradient(90deg, rgba(199,217,246,1) 0%, rgba(255,255,255,1) 100%)",
-    "linear-gradient(90deg, rgba(199,217,246,1) 0%, rgba(255,255,255,1) 100%)"
+    "linear-gradient(90deg, rgba(91,84,103,1) 0%, rgba(255,255,255,1) 100%)",
+    "linear-gradient(90deg, rgba(91,84,103,1) 0%, rgba(255,255,255,1) 100%)"
   )
 
   const color = useColorModeValue(theme.lightMode.color, theme.darkMode.color)
